@@ -4,10 +4,10 @@ import psycopg2
 
 def get_connection():
     connection = psycopg2.connect(
-            database="postgres",
+            database="project1",
             user="postgres",
             password="password1234!",
-            host="pzero-database-python.ch0i3nfkajfb.us-east-1.rds.amazonaws.com",
+            host="project-1.ch0i3nfkajfb.us-east-1.rds.amazonaws.com",
             port="5432"
     )
 

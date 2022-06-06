@@ -27,7 +27,7 @@ def select_user(username, password):
     connection = get_connection()
     cursor = connection.cursor()
 
-    qry = f"SELECT * FROM user_table WHERE username = '{username}' AND passwrd = '{password}';"
+    qry = f"SELECT * FROM user_table WHERE username = '{username}' AND password = '{password}';"
 
     try:
         cursor.execute(qry)

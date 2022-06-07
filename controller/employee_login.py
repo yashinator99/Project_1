@@ -10,6 +10,6 @@ def check_user_login(login_input):
     user_login = check_login(login_input)
 
     if user_login is None:
-        return render_template("failed_login.html") #change this
+        return render_template("failed_login.html") 
     else:
         return render_template("employee_account_page.html", username=user_login.username)

@@ -52,7 +52,7 @@ def view_request_users_page(username):
 def employee_login_page():
     return get_employee_login_page()
 
-@app.route('/login/employee_login/employee_account_page.html', methods=["POST"])
+@app.route('/login/employee_login/input', methods=["POST"])
 def employee_request_page():
     print(request.form)
     return check_user_login(request)

@@ -48,12 +48,21 @@ def request_create_page(username):
 def view_request_users_page(username):
     return get_view_request_page(username)
 
-@app.route('/login/employee_login', methods=["GET"])
+@app.route('/login/employee', methods=["GET"])
 def employee_login_page():
     return get_employee_login_page()
 
-@app.route('/login/employee_login/employee_account_page.html', methods=["POST"])
+@app.route('/login/employee/employee_account_page.html', methods=["POST"])
 def employee_request_page():
+    print(request.form)
+    return check_user_login(request)
+
+@app.route('/login/manager', methods=["GET"])
+def manager_login_page():
+    return get_manager_login_page()
+
+@app.route('/login/manager/manager_account_page.html', methods=["POST"])
+def manager_request_page():
     print(request.form)
     return check_user_login(request)
 

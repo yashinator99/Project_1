@@ -7,7 +7,7 @@ from controller.login_controller import *
 from controller.registration_controller import *
 from controller.deletion_controller import delete_user_account
 from controller.request_controller import *
-
+from controller.manager_controller import *
 
 app = Flask(__name__)
 
@@ -48,12 +48,21 @@ def request_create_page(username):
 def view_request_users_page(username):
     return get_view_request_page(username)
 
-@app.route('/login/employee_login', methods=["GET"])
+@app.route('/login/employee', methods=["GET"])
 def employee_login_page():
     return get_employee_login_page()
 
 @app.route('/login/employee_login/input', methods=["POST"])
 def employee_request_page():
+    print(request.form)
+    return check_user_login(request)
+
+@app.route('/login/manager', methods=["GET"])
+def manager_login_page():
+    return get_manager_login_page()
+
+@app.route('/login/manager/manager_account_page.html', methods=["POST"])
+def manager_request_page():
     print(request.form)
     return check_user_login(request)
 

@@ -7,9 +7,9 @@ def get_request_page(username):
 
 def get_view_request_page(username):
     user_id = prep_user_id(username)
-    reequestinfo = get_view_request(user_id)
-    print(reequestinfo)
-    return render_template("view_request.html", username=username, info=reequestinfo)
+    request_info = get_view_request(user_id)
+    print(request_info)
+    return render_template("view_request.html", username=username, info=request_info)
 
 def request_user_input(username,register_input):
     user_id = prep_user_id(username)
@@ -20,8 +20,8 @@ def request_user_input(username,register_input):
     else:
         return render_template("failed_request.html")
 
-def cancel_request(request_id):
+def cancel_request(request_id, page):
     update_status(request_id)
     user_id = get_user_id_from_request_id(request_id)
-    reequestinfo = get_view_request(user_id)
-    return render_template("employee_view_request.html", info=reequestinfo)
+    request_info = get_view_request(user_id)
+    return render_template(page, info=request_info)

@@ -68,7 +68,11 @@ def manager_request_page():
 
 @app.route('/cancel_request/<request_id>')
 def cancel_request_page(request_id):
-    return cancel_request(request_id)
+    return cancel_request(request_id, "employee_view_request.html")
+
+@app.route('/cancel_request_manager/<request_id>')
+def cancel_request_page(request_id):
+    return cancel_request(request_id, "manager_view_request.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

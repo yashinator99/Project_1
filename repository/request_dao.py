@@ -3,14 +3,14 @@ from repository.connection import get_connection
 from models.request_dto import Request
 
 
-def insert_user_request(user_id, request_title:str, request:str):
+def insert_user_request(user_id, request_desc:str, request_amount:int):
     connection = get_connection()
     cursor = connection.cursor()
 
-    qry = "INSERT INTO request_table VALUES (default, %s, %s, %s) RETURNING request_id;"
+    qry = "INSERT INTO request_table VALUES (default, %s, %s, %s, %s) RETURNING request_id;"
 
     try:
-        cursor.execute(qry,(user_id,request_title,request))
+        cursor.execute(qry,(user_id,request_desc,request_amount, "pending"))
         id = cursor.fetchone()[0]
         #while True:
         #    record = cursor.fetchone()

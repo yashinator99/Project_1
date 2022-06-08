@@ -7,11 +7,11 @@ from repository.request_dao import *
 # Valid first name and last name
 
 def validate_request_service(input):
-    request_dto = Request(0, input.get("request_title"), input.get("request"))
+    request_dto = Request(0, input.get("request_description"), input.get("request_amount"))
     return request_dto.validate_request()
 
 def create_request(user_id, input):
-    return insert_user_request(user_id, input.get("request_title"), input.get("request"))
+    return insert_user_request(user_id, input.get("request_description"), input.get("request_amount"))
 
 def get_view_request(user_id):
     return get_request(user_id)

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UFT-8" />
+    <meta http-equiv="X_UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>View Request</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>User</th>
+        <th>Request Description</th>
+        <th>Request Amount</th>
+        <th>Status</th>
+        <th>Request Cancellation</th>
+      </tr>
+
+      {% for item in info %}
+      <tr>
+        <td>{{item[1]}}</th>
+        <td>{{item[2]}}</td>
+        <td>{{item[3]}}</td>
+        <td>{{item[4]}}</td>
+        {% if item[4] is 'pending' %}
+        <td><a href="http://127.0.0.1:5000/cancel_request_manager/{{item[0]}}"><button class="cancel-btn">Cancel Request</button></a></td>
+        {% else %}
+        <td><button class="cancel-btn disable">Cancel Request</button></td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

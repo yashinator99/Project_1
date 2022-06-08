@@ -66,5 +66,9 @@ def manager_request_page():
     print(request.form)
     return check_user_login(request)
 
+@app.route('/cancel_request/<request_id>')
+def cancel_request_page(request_id):
+    return cancel_request(request_id)
+
 if __name__ == "__main__":
     app.run(debug=True)

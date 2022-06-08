@@ -62,3 +62,4 @@ def delete_employee_request(user_id):
     finally:
         if connection is not None:
             connection.close()
+

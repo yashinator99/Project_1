@@ -44,9 +44,7 @@ def request_create_page(username):
     print("Hello 10000")
     return request_user_input(username,request.form)
 
-@app.route('/view_request/<username>')
-def view_request_users_page(username):
-    return get_view_request_page(username)
+
 
 #----------------
 #Employee Pages
@@ -72,7 +70,12 @@ def employ_request_users_page(username):
 @app.route('/employee_account_page/<username>')
 def go_to_employee_account_page(username):
     return get_employee_account_page(username)
-#/request/<username>/create
+
+@app.route('/employee_view_request/<username>')
+def employee_view_request_users_page(username):
+    return get_employee_view_request(username)
+
+
 #----------------
 #Manager Pages
 #----------------

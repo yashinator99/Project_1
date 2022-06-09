@@ -8,7 +8,7 @@ def get_request_page(username):
 def get_employee_request_page(username):
     return render_template("employee_request.html", username=username)
 
-def get_view_request_page(username):
+def get_employee_view_request(username):
     user_id = prep_user_id(username)
     request_info = get_view_request(user_id)
     print(request_info)

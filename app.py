@@ -48,15 +48,30 @@ def request_create_page(username):
 def view_request_users_page(username):
     return get_view_request_page(username)
 
+#----------------
+#Employee Pages
+#----------------
 @app.route('/login/employee', methods=["GET"])
 def employee_login_page():
     return get_employee_login_page()
 
-@app.route('/login/employee_login/input', methods=["POST"])
+
+@app.route('/login/employee_login/input', methods=["GET", "POST"])
 def employee_request_page():
     print(request.form)
-    return check_user_login(request)
+    return check_user_login_employee(request.form)
 
+@app.route('/cancel_request/<request_id>')
+def cancel_request_page(request_id):
+    return cancel_request(request_id, "employee_view_request.html")
+
+@app.route('/employee_request/<username>')
+def employ_request_users_page(username):
+    return get_employee_request_page(username)
+#/request/<username>/create
+#----------------
+#Manager Pages
+#----------------
 @app.route('/login/manager', methods=["GET"])
 def manager_login_page():
     return get_manager_login_page()
@@ -66,12 +81,9 @@ def manager_request_page():
     print(request.form)
     return check_user_login(request)
 
-@app.route('/cancel_request/<request_id>')
-def cancel_request_page(request_id):
-    return cancel_request(request_id, "employee_view_request.html")
 
 @app.route('/cancel_request_manager/<request_id>')
-def cancel_request_page(request_id):
+def cancel_request_manager_page(request_id):
     return cancel_request(request_id, "manager_view_request.html")
 
 if __name__ == "__main__":

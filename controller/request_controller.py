@@ -5,6 +5,9 @@ from service.deletion_service import prep_user_id
 def get_request_page(username):
     return render_template("request.html", username=username)
 
+def get_employee_request_page(username):
+    return render_template("employee_request.html", username=username)
+
 def get_view_request_page(username):
     user_id = prep_user_id(username)
     request_info = get_view_request(user_id)

@@ -11,7 +11,7 @@ class Request:
     def validate_employee_request(self) -> bool:
         if len(self.request_desc)  > 100:
             return False
-        elif len(self.request_amount) >= 1 or len(self.request_amount) <= 1000:
+        elif len(self.request_amount) < 1 or len(self.request_amount) > 1000:
             return False
         else:
             return True

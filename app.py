@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-from controller.employee_login import get_employee_login_page
 from repository.login_dao import insert_user, select_user
 from models.login_dto import Login
 from controller.home_controller import *
@@ -42,6 +41,7 @@ def request_users_page(username):
 
 @app.route('/request/<username>/create', methods=["POST"])
 def request_create_page(username):
+    print("Hello 10000")
     return request_user_input(username,request.form)
 
 @app.route('/view_request/<username>')
@@ -68,6 +68,10 @@ def cancel_request_page(request_id):
 @app.route('/employee_request/<username>')
 def employ_request_users_page(username):
     return get_employee_request_page(username)
+
+@app.route('/employee_account_page/<username>')
+def go_to_employee_account_page(username):
+    return get_employee_account_page(username)
 #/request/<username>/create
 #----------------
 #Manager Pages

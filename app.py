@@ -6,7 +6,7 @@ from controller.login_controller import *
 from controller.registration_controller import *
 from controller.deletion_controller import delete_user_account
 from controller.request_controller import *
-from controller.manager_controller import *
+
 
 app = Flask(__name__)
 

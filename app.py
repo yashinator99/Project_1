@@ -83,11 +83,23 @@ def employee_view_request_users_page(username):
 def manager_login_page():
     return get_manager_login_page()
 
+@app.route('/login/manager_login/input', methods=["GET","POST"])
+def manager_account_page():
+    print(request.form)
+    return check_user_login_manager(request.form)
+
 @app.route('/login/manager/manager_account_page.html', methods=["POST"])
 def manager_request_page():
     print(request.form)
     return check_user_login(request)
 
+@app.route('/cancel_request_manager/<request_id>')
+def cancel_request_manager_page(request_id):
+    return cancel_request(request_id, "manager_view_request.html")
+
+@app.route('/cancel_request_manager/<request_id>')
+def cancel_request_manager_page(request_id):
+    return cancel_request(request_id, "manager_view_request.html")
 
 @app.route('/cancel_request_manager/<request_id>')
 def cancel_request_manager_page(request_id):

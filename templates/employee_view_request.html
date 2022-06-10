@@ -22,12 +22,15 @@
         <td>{{item[1]}}</th>
         <td>{{item[2]}}</td>
         <td>{{item[3]}}</td>
-
-
-        <td><button class="cancel-btn disable">Cancel Request</button></td>
-
+        <td>{{item[4]}}</td>
+        {% if item[4] == 'pending' %}
+        <td><a href="http://127.0.0.1:5000/cancel_request/{{item[0]}}"><button class="cancel-btn">Cancel Request</button></a></td>
+        {% else %}
+        <td></td>
+        {% endif %}
       </tr>
       {% endfor %}
     </table>
+
   </body>
 </html>

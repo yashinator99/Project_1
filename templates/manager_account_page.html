@@ -8,12 +8,12 @@
   </head>
   <body>
     <h3>Manager Dashboard</h3>
-    <a href="http://127.0.0.1:5000/manager_request.html">
+    <a href="http://127.0.0.1:5000/manager_request/{{username}}">
       <div>
         <button>Request Reimbursement</button>
       </div>
     </a>
-    <a href="http://127.0.0.1:5000/employee_view_request.html">
+    <a href="http://127.0.0.1:5000/manager_view_request/{{username}}">
       <div>
         <button>View Previous Request</button>
       </div>
@@ -31,7 +31,12 @@
     </a>
     <a href="">
       <div>
-        <button>View Reject Request</button>
+        <button>View Rejected Request</button>
+      </div>
+    </a>
+    <a href="http://127.0.0.1:5000/">
+      <div>
+        <button>Logout</button>
       </div>
     </a>
   </body>

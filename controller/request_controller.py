@@ -8,6 +8,9 @@ def get_request_page(username):
 def get_employee_request_page(username):
     return render_template("employee_request.html", username=username)
 
+def get_employee_account_page(username):
+    return render_template("employee_account_page.html", username=username)
+
 def get_employee_view_request(username):
     user_id = prep_user_id(username)
     request_info = get_view_request(user_id)
@@ -33,5 +36,3 @@ def cancel_request(request_id, page):
     return render_template(page, info=request_info)
 
 
-def get_employee_account_page(username):
-    return render_template("employee_account_page.html", username=username)

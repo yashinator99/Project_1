@@ -29,7 +29,7 @@ def get_request(user_id):
     connection = get_connection()
     cursor = connection.cursor()
 
-    qry = f"SELECT request_id, user_id, request_desc, request_account, status FROM request_table WHERE user_id = {user_id};"
+    qry = f"SELECT request_id, user_id, request_desc, request_amount, status FROM request_table WHERE user_id = {user_id};"
 
     try:
         cursor.execute(qry)

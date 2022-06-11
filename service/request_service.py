@@ -16,5 +16,9 @@ def create_request(user_id, input):
 def get_view_request(user_id):
     return get_request(user_id)
 
+# New
+def get_view_all_request(user_id):
+    return get_all_request(user_id)
+
 def update_status(request_id, status):
     return update_request(request_id, status)

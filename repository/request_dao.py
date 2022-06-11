@@ -46,6 +46,28 @@ def get_request(user_id):
         if connection is not None:
             connection.close()
 
+# New
+def get_all_request(user_id):
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    qry = f"SELECT * FROM request_table;"
+
+    try:
+        cursor.execute(qry)
+
+        while True:
+            record = cursor.fetchall()
+            if record is None:
+                break
+            #request_info = Request(record[0], record[1], record[2])
+            return record
+    except(psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if connection is not None:
+            connection.close()
+
 def update_request(request_id, status):
     connection = get_connection()
     cursor = connection.cursor()

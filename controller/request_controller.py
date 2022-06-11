@@ -17,6 +17,17 @@ def get_employee_view_request(username):
     print(request_info)
     return render_template("employee_view_request.html", username=username, info=request_info)
 
+# New
+def get_manager_view_all_request(username):
+    user_id = prep_user_id(username)
+    request_info = get_view_all_request(user_id)
+    print(request_info)
+    return render_template("manager_view_all_request.html", username=username, info=request_info)
+
+# New
+def get_manager_account_page(username):
+    return render_template("manager_account_page.html", username=username)
+
 def request_user_input(username,register_input):
     user_id = prep_user_id(username)
     print("Request_user_input Hello 0")

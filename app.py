@@ -93,17 +93,27 @@ def manager_request_page():
     print(request.form)
     return check_user_login(request)
 
-@app.route('/cancel_request_manager/<request_id>')
-def cancel_request_manager_page(request_id):
-    return cancel_request(request_id, "manager_view_request.html")
+# New
+@app.route('/manager_view_all_request/<username>')
+def manager_view_all_request(username):
+    return get_manager_view_all_request(username)
 
-@app.route('/cancel_request_manager/<request_id>')
-def cancel_request_manager_page(request_id):
-    return cancel_request(request_id, "manager_view_request.html")
+# New
+@app.route('/manager_account_page/<username>')
+def go_to_manager_account_page(username):
+    return get_manager_account_page(username)
 
-@app.route('/cancel_request_manager/<request_id>')
-def cancel_request_manager_page(request_id):
-    return cancel_request(request_id, "manager_view_request.html")
+# @app.route('/cancel_request_manager/<request_id>')
+# def cancel_request_manager_page(request_id):
+#     return cancel_request(request_id, "manager_view_request.html")
+
+# @app.route('/cancel_request_manager/<request_id>')
+# def cancel_request_manager_page(request_id):
+#     return cancel_request(request_id, "manager_view_request.html")
+
+# @app.route('/cancel_request_manager/<request_id>')
+# def cancel_request_manager_page(request_id):
+#     return cancel_request(request_id, "manager_view_request.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

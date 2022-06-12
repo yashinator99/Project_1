@@ -17,8 +17,11 @@ def get_view_request(user_id):
     return get_request(user_id)
 
 # New
-def get_view_all_request(user_id):
-    return get_all_request(user_id)
+def get_view_all_request():
+    return get_all_request()
+
+def get_view_request_status(status):
+    return get_status_request(status)
 
 def update_status(request_id, status):
     return update_request(request_id, status)

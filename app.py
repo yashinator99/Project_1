@@ -35,10 +35,6 @@ def register_new_user():
 def delete_existing_user(username):
     return delete_user_account(username)
 
-@app.route('/request/<username>')
-def request_users_page(username):
-    return get_request_page(username)
-
 @app.route('/request/<username>/create', methods=["POST"])
 def request_create_page(username):
     print("Hello 10000")
@@ -98,22 +94,34 @@ def manager_request_page():
 def manager_view_all_request(username):
     return get_manager_view_all_request(username)
 
+@app.route('/manager_request/<username>')
+def manager_request_users_page(username):
+    return get_manager_request_page(username)
+
+@app.route('/manager_view_request/<username>')
+def manager_view_request_users_page(username):
+    return get_manager_view_request(username)
 # New
 @app.route('/manager_account_page/<username>')
 def go_to_manager_account_page(username):
     return get_manager_account_page(username)
 
-# @app.route('/cancel_request_manager/<request_id>')
-# def cancel_request_manager_page(request_id):
-#     return cancel_request(request_id, "manager_view_request.html")
+@app.route('/cancel_request_manager/<request_id>')
+def cancel_request_manager_page(request_id):
+    return cancel_request(request_id, "manager_view_request.html")
 
-# @app.route('/cancel_request_manager/<request_id>')
-# def cancel_request_manager_page(request_id):
-#     return cancel_request(request_id, "manager_view_request.html")
+@app.route('/accpeted_request_manager/<request_id>')
+def accepted_request_manager_page(request_id):
+    return accept_request(request_id, "manager_view_request.html")
 
-# @app.route('/cancel_request_manager/<request_id>')
-# def cancel_request_manager_page(request_id):
-#     return cancel_request(request_id, "manager_view_request.html")
+@app.route('/rejected_request_manager/<request_id>')
+def rejected_request_manager_page(request_id):
+    return reject_request(request_id, "manager_view_request.html")
+
+@app.route('/manager_view_accepted_request/<username>')
+def go_to_manager_view_accepted_request(username):
+    return get_manager_view_accepted_page(username)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

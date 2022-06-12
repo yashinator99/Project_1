@@ -5,7 +5,7 @@
     <meta charset="UFT-8" />
     <meta http-equiv="X_UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>View All Request</title>
+    <title>View All Accpet Request</title>
   </head>
   <body>
     <table border="1">
@@ -14,7 +14,6 @@
         <th>Request Description</th>
         <th>Request Amount</th>
         <th>Status</th>
-        <th>Actions</th>
       </tr>
 
       {% for item in info %}
@@ -23,17 +22,10 @@
         <td>{{item[2]}}</td>
         <td>{{item[3]}}</td>
         <td>{{item[4]}}</td>
-        {% if item[4] == 'pending' %}
-        <td>
-          <a href="http://127.0.0.1:5000/accpeted_request_manager/{{item[0]}}"><button class="accept">Accept</button></a>
-          <a href="http://127.0.0.1:5000/rejected_request_manager/{{item[0]}}"><button class="reject">Reject</button></a>
-        </td>
-        {% else %}
-        <td></td>
-        {% endif %}
       </tr>
       {% endfor %}
     </table>
+
   </form>
   <a href="http://127.0.0.1:5000/manager_account_page/{{username}}"> <!-- added back button -->
     <div>

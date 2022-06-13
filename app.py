@@ -122,6 +122,11 @@ def rejected_request_manager_page(request_id):
 def go_to_manager_view_accepted_request(username):
     return get_manager_view_accepted_page(username)
 
+# New
+@app.route('/manager_view_rejected_request/<username>')
+def go_to_manager_view_rejected_request(username):
+    return get_manager_view_rejected_page(username)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

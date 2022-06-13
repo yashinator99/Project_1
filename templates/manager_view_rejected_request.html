@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UFT-8" />
+    <meta http-equiv="X_UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>View All Rejected Request</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>User</th>
+        <th>Request Description</th>
+        <th>Request Amount</th>
+        <th>Status</th>
+      </tr>
+
+      {% for item in info %}
+      <tr>
+        <td>{{item[1]}}</th>
+        <td>{{item[2]}}</td>
+        <td>{{item[3]}}</td>
+        <td>{{item[4]}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+  </form>
+  <a href="http://127.0.0.1:5000/manager_account_page/{{username}}"> <!-- added back button -->
+    <div>
+      <button>Back</button>
+    </div>
+  </a>
+  </body>
+</html>

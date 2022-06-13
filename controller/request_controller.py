@@ -50,6 +50,12 @@ def get_manager_view_accepted_page(username):
     print(request_info)
     return render_template("manager_view_accepted_request.html", username=username, info=request_info)
 
+# rejected
+def get_manager_view_rejected_page(username):
+    request_info = get_view_request_status("rejected")
+    print(request_info)
+    return render_template("manager_view_rejected_request.html", username=username, info=request_info)
+
 
 # request info
 

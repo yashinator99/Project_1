@@ -60,7 +60,6 @@ def get_all_request():
             record = cursor.fetchall()
             if record is None:
                 break
-            #request_info = Request(record[0], record[1], record[2])
             return record
     except(psycopg2.DatabaseError) as error:
         print(error)
@@ -81,7 +80,6 @@ def get_status_request(status):
             record = cursor.fetchall()
             if record is None:
                 break
-            #request_info = Request(record[0], record[1], record[2])
             return record
     except(psycopg2.DatabaseError) as error:
         print(error)

@@ -10,7 +10,7 @@ def validate_username(username):
        return True
     else:
         return False
-    
+
 
 def validate_password(password):
     if re.findall('[A-Za-z]{6,15}', password) and len(password) <=15 and not " " in password:
@@ -23,4 +23,19 @@ def validate_role(role):
        return True
     else:
         return False
-    
+
+def validate_request_desc(request_desc) -> bool:
+        if len(request_desc) <= 100:
+            return True
+        else:
+            return False
+
+def validate_request_amount(request_amount):
+    request_amount = str(request_amount)
+    if(re.findall('^[0-9]+$',request_amount)):
+        if int(request_amount) < 1 or int(request_amount) > 1000:
+            return False
+        else:
+            return True
+    else:
+        return False

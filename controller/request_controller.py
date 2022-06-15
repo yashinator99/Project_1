@@ -2,7 +2,6 @@ from flask import render_template
 from service.request_service import *
 from service.deletion_service import prep_user_id
 
-
 #employee request
 
 def get_employee_request_page(username):
@@ -19,13 +18,20 @@ def get_employee_view_request(username):
 
 def request_user_input(username,register_input):
     user_id = prep_user_id(username)
-    print(register_input)
+    role = user_role(user_id)
+    print(role)
     if validate_request_service(register_input):
         request_id = create_request(user_id, register_input)
         if request_id is not None:
-            return render_template("employee_account_page.html", username=username)
+            if role == "manager":
+                return render_template("manager_account_page.html", username=username)
+            else:
+                return render_template("employee_account_page.html", username=username)
     else:
-        return render_template("failed_request.html")
+        if role == "manager":
+            return render_template("failed_request_manager.html", username=username)
+        else:
+            return render_template("failed_request.html", username=username)
 
 #manager request
 
@@ -33,7 +39,10 @@ def get_manager_request_page(username):
     return render_template("manager_request.html", username=username)
 # New
 def get_manager_view_request(username):
-    return render_template("manager_view_request.html", username=username)
+    user_id = prep_user_id(username)
+    request_info = get_view_request(user_id)
+    print(request_info)
+    return render_template("manager_view_request.html", username=username, info=request_info)
 # New
 def get_manager_view_all_request(username):
     request_info = get_view_all_request()

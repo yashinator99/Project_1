@@ -1,5 +1,5 @@
 from models.request_dto import Request
-from repository.login_dao import insert_user, get_user_id
+from repository.login_dao import insert_user, get_user_id, get_user_role
 from repository.user_info_dao import insert_user_info
 from repository.request_dao import *
 from service.validation_service import validate_login, validate_request_desc, validate_request_amount
@@ -31,3 +31,6 @@ def get_view_request_status(status):
 
 def update_status(request_id, status):
     return update_request(request_id, status)
+
+def user_role(user_id):
+    return get_user_role(user_id)

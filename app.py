@@ -37,7 +37,6 @@ def delete_existing_user(username):
 
 @app.route('/request/<username>/create', methods=["POST"])
 def request_create_page(username):
-    print("Hello 10000")
     return request_user_input(username,request.form)
 
 
@@ -83,11 +82,6 @@ def manager_login_page():
 def manager_account_page():
     print(request.form)
     return check_user_login_manager(request.form)
-
-@app.route('/login/manager/manager_account_page.html', methods=["POST"])
-def manager_request_page():
-    print(request.form)
-    return check_user_login(request)
 
 # New
 @app.route('/manager_view_all_request/<username>')

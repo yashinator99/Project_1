@@ -1,5 +1,5 @@
 from models.login_dto import Login
-from repository.login_dao import select_user,select_user_role
+from repository.login_dao import get_user_role, select_user,select_user_role, get_user_role
 
 
 def check_login(login_input):
@@ -17,3 +17,4 @@ def check_login_role(login_input, role):
         return user_dto
     else:
         return None
+

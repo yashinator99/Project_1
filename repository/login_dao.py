@@ -64,6 +64,24 @@ def select_user_role(username,password, role):
         if connection is not None:
             connection.close()
 
+def get_user_role(user_id):
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    qry = f"SELECT role FROM user_table WHERE user_id = '{user_id}';"
+
+    try:
+        cursor.execute(qry)
+        while True:
+            record = cursor.fetchone()
+            if record is None:
+                break
+            return record[0]
+    except(psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if connection is not None:
+            connection.close()
 
 def insert_user(username, password):
     connection = get_connection()

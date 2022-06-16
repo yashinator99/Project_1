@@ -6,6 +6,9 @@ class Homepage:
         self.driver = driver
         
 
-    def login_link(self):
-        return self.driver.find_element(By.ID, "login_link")
+    def employee_login_link(self):
+        return self.driver.find_element(By.ID, "employee_login_link")
+
+    def manager_login_link(self):
+        return self.driver.find_element(By.ID, "manager_login_link")
 

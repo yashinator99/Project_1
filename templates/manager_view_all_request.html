@@ -25,8 +25,8 @@
         <td>{{item[4]}}</td>
         {% if item[4] == 'pending' %}
         <td>
-          <a href="http://127.0.0.1:5000/accpeted_request_manager/{{item[0]}}"><button class="accept">Accept</button></a>
-          <a href="http://127.0.0.1:5000/rejected_request_manager/{{item[0]}}"><button class="reject">Reject</button></a>
+          <a href="http://127.0.0.1:5000/accpeted_request_manager/{{item[0]}}"><button id="accpeted_request" class="accept">Accept</button></a>
+          <a href="http://127.0.0.1:5000/rejected_request_manager/{{item[0]}}"><button id="rejected_request" class="reject">Reject</button></a>
         </td>
         {% else %}
         <td></td>

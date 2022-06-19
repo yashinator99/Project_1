@@ -20,5 +20,17 @@ class View_request:
     def employee_clicks_cancel_request(self):
         return self.driver.find_element(By.ID, "cancel_request")
 
+    def manager_clicks_view_previous_request(self):
+        return self.driver.find_element(By.ID, "view-prev-req")
 
-    
+    def manager_clicks_cancel_request(self):
+        return self.driver.find_element(By.ID, "cancel_request")
+
+    def manager_clicks_view_all_previous_request(self):
+        return self.driver.find_element(By.ID, "view-all-req")
+
+    def manager_clicks_view_acccepted_request(self):
+        return self.driver.find_element(By.ID, "view-accepted-req")
+
+    def manager_clicks_view_rejected_request(self):
+        return self.driver.find_element(By.ID, "view-rejected-req")

@@ -25,3 +25,16 @@ class Request:
 
     def employee_submits_request(self):
         return self.driver.find_element(By.ID, "submit")
+
+    #Manager
+    def clicks_request_reimbursement(self):
+        return self.driver.find_element(By.ID, "request_reim")
+
+    def request_desc(self):
+        return self.driver.find_element(By.ID, "request_desc")
+
+    def request_amount(self):
+        return self.driver.find_element(By.ID, "request_amount")
+
+    def submits_request(self):
+        return self.driver.find_element(By.ID, "submit")

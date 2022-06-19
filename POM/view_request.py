@@ -34,3 +34,9 @@ class View_request:
 
     def manager_clicks_view_rejected_request(self):
         return self.driver.find_element(By.ID, "view-rejected-req")
+
+    def manager_clicks_accept_request(self):
+        return self.driver.find_element(By.ID, "accpeted_request")
+
+    def manager_clicks_reject_request(self):
+        return self.driver.find_element(By.ID, "rejected_request")

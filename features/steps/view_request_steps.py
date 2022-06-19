@@ -96,3 +96,4 @@ def step_manager_clicks_on_all_request(context):
 @then(u'I am on manager view all request page')
 def step_manager_on_view_all_request_page(context):
     assert context.driver.title == "View All Request"
+

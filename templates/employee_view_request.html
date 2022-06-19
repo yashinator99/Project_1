@@ -24,7 +24,7 @@
         <td>{{item[3]}}</td>
         <td>{{item[4]}}</td>
         {% if item[4] == 'pending' %}
-        <td><a href="http://127.0.0.1:5000/cancel_request/{{item[0]}}"><button id="cancel_request" class="cancel-btn">Cancel Request</button></a></td>
+        <td><a href="http://127.0.0.1:5000/cancel_request/{{username}}/{{item[0]}}"><button id="cancel_request" class="cancel-btn">Cancel Request</button></a></td>
         {% else %}
         <td></td>
         {% endif %}

@@ -69,3 +69,28 @@ Feature: Users who logon should be able to make view previous requests, and canc
             | username | password |
             | smith    | pass1234 |
 
+Scenario Outline: Manager should be able to view accept requests
+        Given I am on manager login page
+        When I input a valid username <username>
+        When I input a valid password <password>
+        When I click on the Submit button
+        Then I should be on the page with title Manager account page
+        When I click on manager view accepted requests
+        Then I am on manager view accepted request page
+
+        Examples:
+            | username | password |
+            | smith    | pass1234 |
+
+    Scenario Outline: Manager should be able to view reject requests
+        Given I am on manager login page
+        When I input a valid username <username>
+        When I input a valid password <password>
+        When I click on the Submit button
+        Then I should be on the page with title Manager account page
+        When I click on manager view rejected requests
+        Then I am on manager view rejected request page
+
+        Examples:
+            | username | password |
+            | smith    | pass1234 |

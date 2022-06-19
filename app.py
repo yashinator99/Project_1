@@ -54,9 +54,9 @@ def employee_request_page():
     print(request.form)
     return check_user_login_employee(request.form)
 
-@app.route('/cancel_request/<request_id>')
-def cancel_request_page(request_id):
-    return cancel_request(request_id, "employee_view_request.html")
+@app.route('/cancel_request/<username>/<request_id>')
+def cancel_request_page(username, request_id):
+    return cancel_request(username ,request_id, "employee_view_request.html")
 
 @app.route('/employee_request/<username>')
 def employ_request_users_page(username):
@@ -100,17 +100,17 @@ def manager_view_request_users_page(username):
 def go_to_manager_account_page(username):
     return get_manager_account_page(username)
 
-@app.route('/cancel_request_manager/<request_id>')
-def cancel_request_manager_page(request_id):
-    return cancel_request(request_id, "manager_view_request.html")
+@app.route('/cancel_request_manager/<username>/<request_id>')
+def cancel_request_manager_page(username,request_id):
+    return cancel_request(username, request_id, "manager_view_request.html")
 
-@app.route('/accpeted_request_manager/<request_id>')
-def accepted_request_manager_page(request_id):
-    return accept_request(request_id, "manager_view_request.html")
+@app.route('/accpeted_request_manager/<username>/<request_id>')
+def accepted_request_manager_page(username,request_id):
+    return accept_request(username,request_id, "manager_view_all_request.html")
 
-@app.route('/rejected_request_manager/<request_id>')
-def rejected_request_manager_page(request_id):
-    return reject_request(request_id, "manager_view_request.html")
+@app.route('/rejected_request_manager/<username>/<request_id>')
+def rejected_request_manager_page(username,request_id):
+    return reject_request(username, request_id, "manager_view_all_request.html")
 
 @app.route('/manager_view_accepted_request/<username>')
 def go_to_manager_view_accepted_request(username):

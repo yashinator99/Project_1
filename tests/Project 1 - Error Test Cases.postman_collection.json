@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "a2ce1dd7-e210-4498-a8a8-048e8601dd7d",
+		"name": "Project 1 - Error Test Cases",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20979647"
+	},
+	"item": [
+		{
+			"name": "Wrong Username or Password-http://127.0.0.1:5000/login/employee_login/input",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "biilly",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pass1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login/employee_login/input",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login",
+						"employee_login",
+						"input"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Manager login in employee-http://127.0.0.1:5000/login/employee_login/input",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "smith",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pass1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login/employee_login/input",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login",
+						"employee_login",
+						"input"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wrong User name or password for manager-http://127.0.0.1:5000/login/manager_login/input",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "smiith",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pass1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login/manager_login/input",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login",
+						"manager_login",
+						"input"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee login in manager login page-http://127.0.0.1:5000/login/manager_login/input",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "request_desc",
+							"value": "billy",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pass1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/request/smith/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"request",
+						"smith",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Having more than 100 letters-http://127.0.0.1:5000/request/smith/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "request_desc",
+							"value": "This is more than one hundred characters so that his request will fail rather than having it under 100 characters",
+							"type": "text"
+						},
+						{
+							"key": "request_amount",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/request/smith/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"request",
+						"smith",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wrong request amount-http://127.0.0.1:5000/request/smith/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "request_desc",
+							"value": "less than 100 characters",
+							"type": "text"
+						},
+						{
+							"key": "request_amount",
+							"value": "1001",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/request/smith/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"request",
+						"smith",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wrong request amount 2-http://127.0.0.1:5000/request/smith/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "request_desc",
+							"value": "less than 100 characters",
+							"type": "text"
+						},
+						{
+							"key": "request_amount",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/request/smith/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"request",
+						"smith",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

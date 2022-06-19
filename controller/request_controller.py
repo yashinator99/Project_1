@@ -68,22 +68,22 @@ def get_manager_view_rejected_page(username):
 
 # request info
 
-def cancel_request(request_id, page):
+def cancel_request(username, request_id, page):
     update_status(request_id,"cancelled")
     user_id = get_user_id_from_request_id(request_id)
     request_info = get_view_request(user_id)
-    return render_template(page, info=request_info)
+    return render_template(page, username=username, info=request_info)
 
-def accept_request(request_id, page):
+def accept_request(username, request_id, page):
     update_status(request_id,"accepted")
     user_id = get_user_id_from_request_id(request_id)
     request_info = get_view_request(user_id)
-    return render_template(page, info=request_info)
+    return render_template(page, username=username,info=request_info)
 
-def reject_request(request_id, page):
+def reject_request(username, request_id, page):
     update_status(request_id,"rejected")
     user_id = get_user_id_from_request_id(request_id)
     request_info = get_view_request(user_id)
-    return render_template(page, info=request_info)
+    return render_template(page, username=username,info=request_info)
 
 

@@ -1,17 +1,23 @@
 # Project_1
 
 ## Description
-This website has an employee and manager side of login and functions they can do.
--Employee
+    The Employee Reimbursement System, ERS, allows users to submit reimbursements for business expenses. The submitted reimbursement must be approved by that            employee's manager. Managers should also be able to see reimbursement statistics.
+
+## Project Technologies
+    JavaScript, HTML, CSS, SQL, Python, Flask, Postman, Selenium
+    
+## Features
+    This website has an employee and manager side of login and functions they can do.
+    -Employee
     -Request
     -View past request
-     -cancel pending request
--Manager
+    -cancel pending request
+    -Manager
     -Request
     -View past request
-     -cancel pending request
+    -cancel pending request
     -View all request
-     -accept or reject pendinig quest
+    -accept or reject pendinig quest
     -View accepted request
     -View rejected request
 
